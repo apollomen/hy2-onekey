@@ -9,17 +9,22 @@ Hysteria2 一键安装脚本（Debian / Ubuntu，systemd，root 运行）。
 - 幂等：重复运行复用已有证书和密码，不会把现有节点弄失效
 - 标准输出只打印一行跳跃版分享链接，链接同时存到服务器 `/root/hy2-link.txt`（600 权限）
 
-## 用法
+## 一键运行命令
+
+登录 VPS 终端（root 用户），执行以下命令即可安装：
 
 ```bash
-git clone https://github.com/apollomen/hy2-onekey.git
-cd hy2-onekey
-chmod +x hy2-onekey.sh
-./hy2-onekey.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/apollomen/hy2-onekey/refs/heads/main/hy2-onekey.sh)"
 ```
 
-- 轮换密码（旧链接作废）：`./hy2-onekey.sh --rotate`
-- 卸载：`./hy2-onekey.sh --uninstall`
+如果系统未预装 curl，可使用 wget 代替：
+
+```bash
+bash -c "$(wget -qO- https://raw.githubusercontent.com/apollomen/hy2-onekey/refs/heads/main/hy2-onekey.sh)"
+```
+
+- 轮换密码（旧链接作废）：`bash -c "$(curl -fsSL https://raw.githubusercontent.com/apollomen/hy2-onekey/refs/heads/main/hy2-onekey.sh)" _ --rotate`
+- 卸载：`bash -c "$(curl -fsSL https://raw.githubusercontent.com/apollomen/hy2-onekey/refs/heads/main/hy2-onekey.sh)" _ --uninstall`
 
 ## 说明
 
